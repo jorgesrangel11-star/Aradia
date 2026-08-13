@@ -1,10 +1,10 @@
-# 🧩 Aradia - Plataforma Web para el Apoyo a la Neurodivergencia
+#  Aradia - Plataforma Web para el Apoyo a la Neurodivergencia
 
 **Aradia** es un portal web informativo y plataforma de apoyo diseñada para la atención e inclusión de personas con neurodivergencia (especialmente del espectro autista). El sistema integra recursos educativos, guías visuales e interacción accesible, construido bajo estrictos estándares de aseguramiento de calidad de software y diseño inclusivo.
 
 ---
 
-## 🚀 Características Principales
+##  Características Principales
 
 * **Accesibilidad UI/UX Avanzada:** Interfaz optimizada para reducir la fatiga cognitiva, con esquemas de color adaptables, navegación clara y estructura intuitiva.
 * **Módulo de Recursos Educativos:** Sección centralizada de guías, herramientas de aprendizaje e información técnica orientada a familiares, educadores y usuarios.
