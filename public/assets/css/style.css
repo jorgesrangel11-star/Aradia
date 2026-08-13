@@ -1,0 +1,378 @@
+/* ====== FONDO GENERAL ====== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background-color: #dbe9ff;
+}
+
+/* ====== TITULO LOGIN ====== */
+.login-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f5aa9;
+    margin-bottom: 35px;
+}
+
+/* ====== CONTENEDOR CENTRAL LOGIN ====== */
+.login-wrapper-nobox {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ====== FORMULARIO LOGIN ====== */
+.login-form-simple {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Etiquetas login */
+.login-form-simple label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1f1f1f;
+    margin-bottom: 6px;
+}
+
+/* Inputs login */
+.login-form-simple .form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #c8d6f2;
+    background-color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* Botón rosa login */
+.btn-login {
+    background-color: #ff4f8b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+}
+
+/* Texto inferior login */
+.login-footer-text {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.login-footer-text a {
+    color: #ff4f8b;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ================================
+   ESTILOS PANTALLA USUARIO GENERAL
+   ================================ */
+
+/* HEADER SUPERIOR (ÚNICO) */
+.general-header {
+    background-color: #6aa9ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* IZQUIERDA: botones de cuenta */
+.gh-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Centro: logo */
+.gh-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Derecha: menú principal */
+.gh-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+}
+
+.gh-logo {
+    height: 70px;
+}
+
+/* Botones tipo icono para inicio y registro */
+.header-btn {
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Inicio de sesión: fondo blanco, texto azul */
+.header-btn-login {
+    background-color: #ffffff;
+    color: #0f3f82;
+}
+
+/* Registro: fondo blanco ligeramente translúcido */
+.header-btn-register {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #0f3f82;
+}
+
+.header-btn-login:hover,
+.header-btn-register:hover {
+    opacity: 0.9;
+}
+
+/* Links del menú de la derecha */
+.gh-link {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 10px;
+}
+
+.gh-link:hover {
+    opacity: 0.8;
+}
+
+/* CONTENIDO PRINCIPAL GENERAL */
+.general-main {
+    padding: 40px 60px 60px;
+}
+
+/* SECCIÓN HERO (2 columnas) */
+.section-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Tarjeta izquierda y derecha */
+.hero-left,
+.hero-right {
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 18px;
+    padding: 20px 24px;
+}
+
+/* Tarjeta izquierda: texto */
+.hero-title {
+    font-size: 34px;
+    color: #2351a3;
+    margin-bottom: 5px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #2351a3;
+    margin-bottom: 15px;
+}
+
+.hero-text {
+    font-size: 15px;
+    color: #1f1f1f;
+}
+
+/* Tarjeta derecha: imagen + texto centrados */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Imagen del hero derecho (robot) */
+.hero-video {
+    width: 100%;
+    max-width: 550px;   /* 🔥 tamaño máximo de la imagen */
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+/* SECCIÓN SERVICIOS */
+.section-services {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.services-title {
+    font-size: 24px;
+    color: #2351a3;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.services-desc {
+    max-width: 700px;
+    font-size: 15px;
+}
+
+/* SECCIÓN PICTOGRAMAS (CATÁLOGO) */
+.section-pictos {
+    margin-top: 35px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pictos-main-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1f2933;
+}
+
+/* Grid de cards tipo catálogo */
+.pictos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+/* Card estilo catálogo (como cursos) */
+.picto-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Imagen grande arriba */
+.picto-img img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Cuerpo de la tarjeta */
+.picto-body {
+    padding: 14px 16px 18px;
+    text-align: center;
+}
+
+.picto-name {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1f2933;
+}
+
+.picto-desc {
+    font-size: 14px;
+    color: #4b5563;
+}
+
+/* SECCIÓN CONTACTO / FOOTER SIMPLE */
+.section-contact {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.contact-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2351a3;
+    margin-bottom: 5px;
+}
+
+.contact-text {
+    font-size: 14px;
+}
+/* ============================
+   LAYOUT PANEL ADMIN
+   ============================ */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    width: 230px;
+    background-color: #20252b;
+    color: #ffffff;
+    padding: 20px 16px;
+}
+
+.admin-sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.admin-sidebar-logo span {
+    font-size: 18px;
+}
+
+.admin-sidebar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-sidebar nav ul li {
+    margin-bottom: 12px;
+}
+
+.admin-sidebar nav a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.admin-sidebar nav a:hover,
+.admin-sidebar nav a.activo {
+    background-color: #343b45;
+}
+
+.admin-main {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 24px 32px;
+}
+
+/* Tabla del catálogo */
+.table-img-thumb {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+}

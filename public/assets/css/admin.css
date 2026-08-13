@@ -1,0 +1,99 @@
+/* ====== ESTILOS PANEL ADMIN (SIDEBAR + CONTENIDO) ====== */
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Layout general: sidebar + contenido */
+.admin-layout {
+    min-height: 100vh;
+    display: flex;
+}
+
+/* ====== SIDEBAR ====== */
+.admin-sidebar {
+    width: 260px;
+    background-color: #111827;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px;
+}
+
+/* Marca arriba */
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.admin-brand img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.admin-brand span {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Menú lateral */
+.admin-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.admin-menu li {
+    margin-bottom: 12px;
+}
+
+.admin-menu a {
+    display: block;
+    text-decoration: none;
+    color: #e5e7eb;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.admin-menu a:hover,
+.admin-menu a.active {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+/* Usuario abajo */
+.admin-user {
+    margin-top: auto;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+.admin-user strong {
+    color: #ffffff;
+}
+
+/* ====== CONTENIDO PRINCIPAL ====== */
+#admin-main {
+    flex: 1;
+    background-color: #f3f4f6;
+    padding: 32px;
+}
+
+/* ====== TÍTULO DE CATÁLOGO ====== */
+.catalog-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* Encabezado de tabla un poquito gris */
+.table thead {
+    background-color: #e5e7eb;
+}
