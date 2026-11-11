@@ -1,13 +1,13 @@
 <?php
 require_once __DIR__ . '/../config/db.php';
-require_once __DIR__ . '/gestor_paquetes.php'; // Importamos las funciones de paquetes
+require_once __DIR__ . '/gestor_paquetes.php'; 
 
 
 function obtener_contenido_premium() {
-    // Usamos la misma función del gestor de paquetes
+
     $paquetes = obtener_paquetes_premium_admin();
     
-    // Agregamos el formato del precio para mostrarlo bonito
+   
     foreach ($paquetes as &$paquete) {
         $paquete['precio_formato'] = '$' . number_format($paquete['precio'], 2);
     }
@@ -18,7 +18,7 @@ function obtener_contenido_premium() {
 function procesar_compra($id_usuario, $id_contenido) {
     global $conn;
     
-    // Verificar que el usuario existe
+
     $sql_usuario = "SELECT id_usr FROM usuario WHERE id_usr = ?";
     $stmt = mysqli_prepare($conn, $sql_usuario);
     mysqli_stmt_bind_param($stmt, "i", $id_usuario);
