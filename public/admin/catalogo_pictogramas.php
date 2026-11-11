@@ -7,10 +7,10 @@ if (!isset($_SESSION['tip_usu']) || (int)$_SESSION['tip_usu'] !== 1) {
     exit;
 }
 
-// Gestor de pictogramas
+
 require_once __DIR__ . '/../../lib/gestor_pictogramas.php';
 
-// Traer TODOS los pictogramas (activos e inactivos)
+
 $pictogramas = mostrar_pictogramas();
 ?>
 <!DOCTYPE html>
