@@ -186,9 +186,7 @@ function eliminar_pictograma($id_pic)
     }
 }
 
-/* ================================
-   CONTROLADOR SENCILLO (POST)
-   ================================ */
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -205,7 +203,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $nombre = trim($_POST['nombre']);
                 $descripcion = trim($_POST['descripcion']);
                 $imagen = trim($_POST['imagen']);
-                $estatus = 1; // activo por defecto
+                $estatus = 1; 
 
                 $res = agregar_pictograma($nombre, $descripcion, $imagen, $estatus);
                 $clave = ($res['estatus'] === 'exito') ? 'msg' : 'error';
