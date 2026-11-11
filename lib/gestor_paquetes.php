@@ -127,7 +127,7 @@ function eliminar_paquete($id) {
     }
 }
 
-// Función para el catálogo de usuarios (la misma pero con otro nombre para no confundir)
+// Función para el catálogo de usuarios 
 function obtener_paquetes_activos() {
     return obtener_paquetes_premium_admin();
 }
