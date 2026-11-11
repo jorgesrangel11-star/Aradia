@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-/* Solo usuarios generales */
+
 if (!isset($_SESSION['mail']) || $_SESSION['mail'] === 'admin@gmail.com') {
     session_destroy();
     header("Location: ../login.php?error=" . urlencode('Acceso no autorizado'));
@@ -16,7 +16,7 @@ $pictogramas_activos = mostrar_pictogramas_activos();
 if (!is_array($pictogramas_activos)) {
     $pictogramas_activos = [];
 }
-// Limitar a 8 pictogramas para la muestra
+
 $pictogramas_muestra = array_slice($pictogramas_activos, 0, 8);
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ $pictogramas_muestra = array_slice($pictogramas_activos, 0, 8);
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /* Estilos para los botones de navegación (en lugar de pestañas) */
+ 
         .nav-buttons {
             display: flex;
             justify-content: center;
@@ -136,7 +136,7 @@ $pictogramas_muestra = array_slice($pictogramas_activos, 0, 8);
             animation: none;
         }
         
-        /* Estilos para el chatbot */
+  
         .chatbot-container {
             position: fixed;
             bottom: 30px;
@@ -551,7 +551,7 @@ $pictogramas_muestra = array_slice($pictogramas_activos, 0, 8);
             </div>
         </section>
 
-        <!-- SERVICIOS -->
+  
         <section id="servicios" class="section-services">
             <h2 class="services-title">Servicios</h2>
             <p class="services-desc">
@@ -561,13 +561,13 @@ $pictogramas_muestra = array_slice($pictogramas_activos, 0, 8);
             </p>
         </section>
 
-        <!-- BOTONES DE NAVEGACIÓN A CATÁLOGO Y COMPRAS (EN VEZ DE PESTAÑAS) -->
+        
         <div class="nav-buttons">
             <a href="catalogo.php" class="nav-btn"> Catálogo</a>
             <a href="compras.php" class="nav-btn"> Compra de Contenido</a>
         </div>
 
-        <!-- MUESTRA DE PICTOGRAMAS (LOS QUE YA ESTABAN) -->
+     
         <section class="muestra-pictos">
             <h2 class="muestra-titulo">Muestra de Contenido</h2>
 
@@ -591,24 +591,24 @@ $pictogramas_muestra = array_slice($pictogramas_activos, 0, 8);
                 </div>
             <?php } ?>
 
-            <!-- Botón para ver más en el catálogo -->
+     
             <div class="ver-mas-container">
                 <a href="catalogo.php" class="ver-mas-btn">Ver catálogo completo →</a>
             </div>
         </section>
 
-        <!-- SECCIÓN DE DESCARGA DE APLICACIÓN -->
+       
         <section class="app-download-section">
             <h2 class="download-title">Descarga nuestra App</h2>
             <p class="download-subtitle">Lleva MindKind contigo a todas partes</p>
             
             <div class="download-buttons">
-                <!-- Enlace a App Store -->
+           
                 <a href="https://apps.apple.com/mx/app/mindkind/id123456789" target="_blank" rel="noopener noreferrer" class="download-btn">
                     <img src="../assets/img/app-store.png.jpg" alt="Descargar en App Store" class="btn-img">
                 </a>
                 
-                <!-- Enlace a Google Play -->
+               
                 <a href="https://play.google.com/store/apps/details?id=com.mindkind.app" target="_blank" rel="noopener noreferrer" class="download-btn">
                     <img src="../assets/img/google-play.png.jpg" alt="Descargar en Google Play" class="btn-img">
                 </a>
@@ -625,17 +625,14 @@ $pictogramas_muestra = array_slice($pictogramas_activos, 0, 8);
 
     </main>
 
-    <!-- AYUDA EN LÍNEA - CHATBOT -->
     <?php include 'ayuda_panel.php'; ?>
 
     <script>
-        // ========================================
-        // CHATBOT CON RESPUESTAS VARIADAS
-        // ========================================
+       
         let isChatbotOpen = false;
         let chatHistory = [];
 
-        // Base de conocimientos con múltiples respuestas para cada tema
+    
         const botResponses = {
             saludos: [
                 "¡Hola!  ¿En qué puedo ayudarte hoy?",
@@ -715,7 +712,7 @@ $pictogramas_muestra = array_slice($pictogramas_activos, 0, 8);
                 button.style.transform = 'scale(0.9)';
                 document.querySelector('.chat-notification').style.display = 'none';
                 
-                // Mensaje de bienvenida aleatorio
+           
                 if (chatHistory.length === 0) {
                     setTimeout(() => {
                         const welcomeMsg = getRandomResponse('saludos');
@@ -783,33 +780,32 @@ $pictogramas_muestra = array_slice($pictogramas_activos, 0, 8);
 
         function getBotResponse(message) {
             message = message.toLowerCase();
-            
-            // Detectar saludos
+        
             if (message.match(/\b(hola|buenos días|buenas tardes|buenas noches|hey|que tal|saludos)\b/)) {
                 return getRandomResponse('saludos');
             }
             
-            // Detectar preguntas sobre la app
+  
             if (message.match(/\b(app|aplicación|usar|funciona|como usar|manejar|descargar|instalar)\b/)) {
                 return getRandomResponse('app');
             }
             
-            // Detectar preguntas sobre compras
+            
             if (message.match(/\b(comprar|premium|pago|precio|costo|adquirir|paquete|producto|pagar|tarjeta)\b/)) {
                 return getRandomResponse('compras');
             }
             
-            // Detectar preguntas sobre pictogramas
+       
             if (message.match(/\b(pictograma|imagen|dibujo|categoría|visual|gratis|gratuito|emociones|actividades)\b/)) {
                 return getRandomResponse('pictogramas');
             }
             
-            // Detectar problemas técnicos
+     
             if (message.match(/\b(problema|error|falla|bug|técnico|no funciona|ayuda|soporte|no carga|falló)\b/)) {
                 return getRandomResponse('problemas');
             }
             
-            // Detectar contacto
+    
             if (message.match(/\b(contacto|correo|email|teléfono|whatsapp|llamar|mensaje|comunicar)\b/)) {
                 return getRandomResponse('contacto');
             }
