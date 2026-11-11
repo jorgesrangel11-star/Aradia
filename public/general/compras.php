@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-/* Solo usuarios generales */
+
 if (!isset($_SESSION['mail']) || $_SESSION['mail'] === 'admin@gmail.com') {
     session_destroy();
     header("Location: ../login.php?error=" . urlencode('Acceso no autorizado'));
@@ -15,18 +15,18 @@ $producto_seleccionado = null;
 $mensaje_compra = '';
 $error_compra = '';
 
-// Verificar si hay un ID de producto específico
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     foreach ($contenido_premium as $producto) {
-        if ($producto['id_paquete'] == $id) {  // CAMBIADO: 'id' por 'id_paquete'
+        if ($producto['id_paquete'] == $id) {  
             $producto_seleccionado = $producto;
             break;
         }
     }
 }
 
-// Procesar compra
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comprar_contenido'])) {
     $id_contenido = $_POST['id_contenido'];
     $id_usuario = $_SESSION['id_usr'];
@@ -47,13 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comprar_contenido']))
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /* Estilos generales */
+       
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8fafc;
         }
 
-        /* Header general - AGREGADO para que coincida con el index */
+        
         .general-header {
             background: white;
             padding: 15px 30px;
@@ -127,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comprar_contenido']))
             opacity: 0.9;
         }
 
-        /* Grid premium */
+
         .premium-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -209,7 +209,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comprar_contenido']))
             transform: scale(1.02);
         }
 
-        /* Detalle de producto */
+
         .detalle-producto {
             max-width: 600px;
             margin: 0 auto 40px;
@@ -288,7 +288,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comprar_contenido']))
 
 <body>
 
-    <!-- HEADER ÚNICO -->
+   
     <header class="general-header">
         <div class="gh-left">
             <a href="../login.php" class="header-btn header-btn-login">Inicio de sesión</a>
@@ -306,18 +306,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comprar_contenido']))
         </div>
     </header>
 
-    <!-- Botón para volver al inicio -->
     <div style="max-width: 1200px; margin: 0 auto;">
         <a href="index.php" class="back-btn">← Volver al inicio</a>
     </div>
 
-    <!-- Encabezado -->
+
     <div class="compras-header">
         <h1> Compras Premium</h1>
         <p>Adquiere contenido exclusivo para potenciar tu experiencia</p>
     </div>
 
-    <!-- Mensajes de compra -->
+
     <?php if ($mensaje_compra): ?>
         <div class="compra-mensaje exito"><?php echo $mensaje_compra; ?></div>
     <?php endif; ?>
@@ -326,7 +325,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comprar_contenido']))
         <div class="compra-mensaje error"><?php echo $error_compra; ?></div>
     <?php endif; ?>
 
-    <!-- Si hay un producto seleccionado, mostrar detalle -->
+ 
     <?php if ($producto_seleccionado): ?>
         <div class="detalle-producto">
             <h2 style="color: #1f2937; margin-bottom: 20px;"><?php echo htmlspecialchars($producto_seleccionado['nombre']); ?></h2>
@@ -339,10 +338,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comprar_contenido']))
                 <strong>Incluye:</strong> <?php echo htmlspecialchars($producto_seleccionado['incluye']); ?>
             </p>
             <p style="font-size: 32px; font-weight: bold; color: #8b5cf6; margin-bottom: 20px;">
-                $<?php echo number_format($producto_seleccionado['precio'], 2); ?>  <!-- CAMBIADO: precio_formato por formato directo -->
+                $<?php echo number_format($producto_seleccionado['precio'], 2); ?>  
             </p>
             <form method="POST">
-                <input type="hidden" name="id_contenido" value="<?php echo $producto_seleccionado['id_paquete']; ?>">  <!-- CAMBIADO: id por id_paquete -->
+                <input type="hidden" name="id_contenido" value="<?php echo $producto_seleccionado['id_paquete']; ?>">  
                 <button type="submit" name="comprar_contenido" 
                         style="background: #8b5cf6; color: white; border: none; padding: 15px 30px; border-radius: 10px; width: 100%; font-size: 18px; font-weight: bold; cursor: pointer;">
                     Confirmar compra
@@ -351,7 +350,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comprar_contenido']))
         </div>
     <?php endif; ?>
 
-    <!-- Listado de todos los productos premium -->
+  
     <h3 style="text-align: center; margin: 40px 0 20px; color: #1f2937;">Todos los paquetes premium</h3>
     <div class="premium-grid">
         <?php foreach ($contenido_premium as $producto): ?>
@@ -364,8 +363,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comprar_contenido']))
                     <h3 class="premium-card-title"><?php echo htmlspecialchars($producto['nombre']); ?></h3>
                     <p class="premium-card-desc"><?php echo htmlspecialchars($producto['descripcion']); ?></p>
                     <p class="premium-card-incluye"><strong>Incluye:</strong> <?php echo htmlspecialchars($producto['incluye']); ?></p>
-                    <div class="premium-card-price">$<?php echo number_format($producto['precio'], 2); ?></div>  <!-- CAMBIADO: precio_formato por formato directo -->
-                    <a href="compras.php?id=<?php echo $producto['id_paquete']; ?>" class="premium-card-btn">  <!-- CAMBIADO: id por id_paquete -->
+                    <div class="premium-card-price">$<?php echo number_format($producto['precio'], 2); ?></div> 
+                    <a href="compras.php?id=<?php echo $producto['id_paquete']; ?>" class="premium-card-btn"> 
                         Ver detalles
                     </a>
                 </div>
