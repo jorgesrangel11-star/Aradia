@@ -1,4 +1,4 @@
-<!-- CHATBOT DE AYUDA EN LÍNEA -->
+
 <div class="chatbot-container">
     <div class="chatbot-button" onclick="toggleChatbot()">
         <svg class="chat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
