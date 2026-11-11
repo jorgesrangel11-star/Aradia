@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-/* Solo usuarios generales */
+
 if (!isset($_SESSION['mail']) || $_SESSION['mail'] === 'admin@gmail.com') {
     session_destroy();
     header("Location: ../login.php?error=" . urlencode('Acceso no autorizado'));
@@ -27,7 +27,7 @@ $contenido_premium = obtener_contenido_premium();
     <link rel="stylesheet" href="../assets/css/bootstrap.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <style>
-        /* Estilos generales */
+    
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8fafc;
@@ -383,25 +383,23 @@ $contenido_premium = obtener_contenido_premium();
         </div>
     </header>
 
-    <!-- Botón para volver al inicio -->
+   
     <div style="max-width: 1200px; margin: 0 auto;">
         <a href="index.php" class="back-btn">← Volver al inicio</a>
     </div>
 
-    <!-- Encabezado del catálogo -->
+   
     <div class="catalogo-header">
         <h1> Catálogo de Pictogramas</h1>
         <p>Explora nuestra colección completa de pictogramas gratuitos y premium</p>
     </div>
 
-    <!-- SUBPESTAÑAS DEL CATÁLOGO -->
     <div class="catalogo-subtabs">
         <div class="catalogo-subtab active" onclick="showCatalogSubtab('gratuitos')"> Gratuitos</div>
         <div class="catalogo-subtab" onclick="showCatalogSubtab('premium')"> Premium</div>
         <div class="catalogo-subtab" onclick="showCatalogSubtab('todos')"> Todos</div>
     </div>
 
-    <!-- CONTENIDO GRATUITOS -->
     <div id="subtab-gratuitos" class="subtab-content active">
         <h3 style="text-align: center; margin-bottom: 30px; color: #059669;">Pictogramas Gratuitos</h3>
         <?php if (empty($pictogramas_activos)): ?>
